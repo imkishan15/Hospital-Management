@@ -25,7 +25,7 @@ urlpatterns = [
 
 
     path('aboutus', views.aboutus_view),
-    path('contactus', views.contactus_view),
+    path('contact', views.contactus_view),
 
 
     path('adminclick', views.adminclick_view),

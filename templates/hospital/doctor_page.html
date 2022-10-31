@@ -32,11 +32,15 @@ facebook : fb.com/sumit.luv
 
     <style>
         .column{
-            margin: 2%;
+            margin: 2.5%;
         }
         .row{
             margin: 2%;
         }
+        .doc{
+            margin: 10px 10%;
+        }
+
         
     </style>
 
@@ -47,34 +51,101 @@ facebook : fb.com/sumit.luv
 
     <!--About-us page content-->
     <!-- .banner-home -->
-    <div class="col-lg-10 mt-5">
-        <h1 class="text-center mb-5 wow fadeInUp"> &nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Our Doctors👨‍⚕️ </h1>
+    <div class="page-banner overlay-dark bg-image" style="background-image: url('{% static "img1/bg_image_1.jpg" %}');">
+        <div class="banner-section">
+          <div class="container text-center wow fadeInUp">
+            <nav aria-label="Breadcrumb">
+              <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
+                <li class="breadcrumb-item"><a href="home">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Doctors</li>
+              </ol>
+            </nav>
+            <h1 class="font-weight-normal">Our Doctors</h1>
+          </div> <!-- .container -->
+        </div> <!-- .banner-section -->
+      </div> <!-- .page-banner -->
+    
 
-        <div class="row">
-            {% for d in doctors %}
-            <div class="column">
-                <div class="card">
-                    <div class="card-doctor">
-                        <div class="header">
-                            <img src="{% static d.profile_pic.url %}" height="200px" alt="">
-                            <div class="meta">
-                                <a href="#"><span class="mai-call"></span></a>
-                                <a href="#"><span class="mai-logo-whatsapp"></span></a>
+    <div class="doc">
+            <div class="row">
+                {% for d in doctors %}
+                <div class="column">
+                    <div class="card">
+                        <div class="card-doctor">
+                            <div class="header">
+                                <img src="{% static d.profile_pic.url %}" height="200px" alt="">
+                                <div class="meta">
+                                    <a href="#"><span class="mai-call"></span></a>
+                                    <a href="#"><span class="mai-logo-whatsapp"></span></a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="body">
-                            <p class="text-xl mb-0">{{d.get_name}}</p>
-                            <span class="text-sm text-grey">{{d.department}}</span>
+                            <div class="body">
+                                <p class="text-xl mb-0">{{d.get_name}}</p>
+                                <span class="text-sm text-grey">{{d.department}}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </div>
 
+    <div class="page-section">
+        <div class="container">
+          <h1 class="text-center wow fadeInUp">Make an Appointment</h1>
+      
+          <form class="main-form">
+            <div class="row mt-5 ">
+              <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+                <input type="text" class="form-control" placeholder="Full name">
+              </div>
+              <div class="col-12 col-sm-6 py-2 wow fadeInRight">
+                <input type="text" class="form-control" placeholder="Email address..">
+              </div>
+              <div class="col-12 col-sm-6 py-2 wow fadeInLeft" data-wow-delay="300ms">
+                <input type="date" class="form-control">
+              </div>
+              <div class="col-12 col-sm-6 py-2 wow fadeInRight" data-wow-delay="300ms">
+                <select name="departement" id="departement" class="custom-select">
+                  <option value="general">General Health</option>
+                  <option value="cardiology">Cardiology</option>
+                  <option value="dental">Dental</option>
+                  <option value="neurology">Neurology</option>
+                  <option value="orthopaedics">Orthopaedics</option>
+                </select>
+              </div>
+              <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
+                <input type="text" class="form-control" placeholder="Number..">
+              </div>
+              <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
+                <textarea name="message" id="message" class="form-control" rows="6" placeholder="Enter message.."></textarea>
+              </div>
+            </div>
+      
+            <button type="submit" class="btn btn-primary mt-3 wow zoomIn">Submit Request</button>
+          </form>
+        </div>
+      </div> <!-- .page-section -->
+      
+
+    <div class="page-section banner-home bg-image" style="background-image: url('{% static "img1/banner-pattern.svg" %}');">
+        <div class="container py-5 py-lg-0">
+          <div class="row align-items-center">
+            <div class="col-lg-4 wow zoomIn">
+              <div class="img-banner d-none d-lg-block">
+                <img src="{% static "img1/mobile_app.png" %}" alt="">
+              </div>
+            </div>
+            <div class="col-lg-8 wow fadeInRight">
+              <h1 class="font-weight-normal mb-3">Get easy access of all features using One Health Application</h1>
+              <a href="#"><img src="{% static "img1/google_play.svg" %}" alt=""></a>
+              <a href="#" class="ml-2"><img src="{% static "img1/app_store.svg" %}" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div> <!-- .banner-home -->
+      
     <!--end-->
 
 
@@ -120,7 +191,7 @@ youtube : youtube.com/lazycoders
                     <h5>Contact</h5>
                     <p class="footer-link mt-2">351 Alkapuri, Vadodara, 391410</p>
                     <a href="#" class="footer-link">820-015-8462</a>
-                    <a href="#" class="footer-link">lagadhirdivyesh2508@gmail.com</a>
+                    <a href="#" class="footer-link">one.health@gmail.com</a>
 
 
                 </div>
@@ -128,8 +199,10 @@ youtube : youtube.com/lazycoders
 
             <hr>
 
-            <p id="copyright">Copyright &copy; 2022 <a href="https://macodeid.com/" target="_blank">Divyesh
-                    Lagadhir</a>. All right reserved</p>
+            
+
+            <p id="copyright">Copyright &copy; 2022 <a href="https://macodeid.com/" target="_blank">Kishan Kalavadia, Divyesh Lagdhir, Ashish Madan</a>. All right reserved</p>
+          </div>
         </div>
     </footer>
 
